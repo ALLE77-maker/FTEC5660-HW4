@@ -2,6 +2,10 @@ name: DeepSeek official 60-question grading
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/deepseek-run-request.txt
 
 jobs:
   official-deepseek-test:
