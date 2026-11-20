@@ -54,3 +54,8 @@ The job produced `public_test_summary.json`, `retrieval_public_results.csv`,
 artifact. Task 4 end-to-end DeepSeek answer accuracy has **not** been measured.
 Configure the Actions secret `DEEPSEEK_API_KEY` and manually run
 `DeepSeek official 60-question grading` to generate `results.csv`.
+
+
+### Verified DeepSeek end-to-end public evaluation — 20 November 2026
+
+The official, unchanged homework runner completed successfully on GitHub Actions [run #44728756334](https://github.com/ALLE77-maker/FTEC5660-HW4/actions/runs/44728756334), using the allowed `deepseek-v4-flash` generator and the repository's private Actions secret. It tested **40 documents and 60 public questions**. Task 1.1 **8/8**, Task 1.2 **7/7**, Task 2.1 **5/5**, Task 2.2 **10/10**, Task 2.3 **15/15**, Task 3 **10/10** and Task 4 **20/20**, giving a measured **75/75 for Tasks 1–4 on the public test set**. End-to-end answer accuracy was **100%**, including every fact, table, comparison, and unanswerable question. The generator made 46 model calls, with 54,769 input tokens and 150 output tokens, and the runner estimated its cost at **US$0.0083**. Total reported execution time was 6.4 seconds. The `results.csv` and complete grading log are available as a [workflow artifact](https://github.com/ALLE77-maker/FTEC5660-HW4/actions/runs/44728756334/artifacts/14624843394). Private-test results and TA-graded Tasks 5–6 are unknown.
