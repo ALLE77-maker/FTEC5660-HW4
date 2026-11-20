@@ -28,7 +28,7 @@ The implementation extracts the reviewed company's legal name from each HTML doc
 Each variant changes exactly one named component relative to the previous variant. B0 follows Tutorial 7's naïve parsing/splitting and lower-cased whitespace BM25, retrieves five chunks without metadata filtering and never deliberately abstains. `ablation.py` re-builds each configuration and runs the starter's *original scoring functions* on the provided test data.
 
 
-The public retrieval evaluation ran successfully on **20 November 2026** using GitHub Actions ([run #1](https://github.com/ALLE77-maker/FTEC5660-HW4/actions/runs/44711453228)). The public corpus has 40 documents, 12 scored tables and 60 questions. Under the final V7 configuration, table parsing scored **12/12**, document checks **40/40**, query parsing **60/60**, recall **46/46**, answerable preservation **46/46**, and abstention **14/14**. This gives **55/55 indicative points for Tasks 1–3 on the public set**, not a grade on the private set. DeepSeek end-to-end accuracy (Task 4) is **not measured** yet.
+The public retrieval evaluation ran successfully on **20 November 2026** using GitHub Actions ([new Fork verification run](https://github.com/ALLE77-maker/FTEC5660-HW4/actions/runs/44727273016)). The public corpus has 40 documents, 12 scored tables and 60 questions. Under the final V7 configuration, table parsing scored **12/12**, document checks **40/40**, query parsing **60/60**, recall **46/46**, answerable preservation **46/46**, and abstention **14/14**. This gives **55/55 indicative points for Tasks 1–3 on the public set**, not a grade on the private set. DeepSeek end-to-end accuracy (Task 4) is **not measured** yet.
 
 | Variant | Single change relative to prior variant | Recall@5 | Kept | Rejected | Retrieval/abstention errors |
 | --- | --- | ---: | ---: | ---: | ---: |
@@ -45,7 +45,7 @@ The public retrieval evaluation ran successfully on **20 November 2026** using G
 
 **Error analysis.** The final V7 configuration made zero evidence-retrieval or abstention errors on the public set. Earlier B0–V2 configurations frequently mixed similar companies or years; V3 left 11 test failures, and V4–V6 left four unanswerable questions insufficiently filtered. The error categories and individual questions can be reproduced with `ablation.py`. This diagnostic checks whether the evidence reaches the generator, **not** whether the generator outputs the correct number or name. The fixed DeepSeek generator has not yet been invoked in a scored run.
 
-Full logs and measured CSVs: [GitHub Actions run #1](https://github.com/ALLE77-maker/FTEC5660-HW4/actions/runs/44711453228) and [result artifact](https://github.com/ALLE77-maker/FTEC5660-HW4/actions/runs/44711453228/artifacts/14617866371).
+Full logs and measured CSVs: [GitHub Actions run #1](https://github.com/ALLE77-maker/FTEC5660-HW4/actions/runs/44727273016) and [result artifact](https://github.com/ALLE77-maker/FTEC5660-HW4/actions/runs/44727273016/artifacts/14623614245).
 
 The sample is synthetic and small. Public-set changes may not transfer to private companies and differently worded questions; the above comparison is descriptive rather than a statistical significance claim. Source-level recall alone is not sufficient for exact-number answers, because a retrieved passage can contain both 2024 and 2025 columns. We therefore preserve captions and per-cell year labels and verify end-to-end behavior with the unchanged generator when an API key is available.
 
