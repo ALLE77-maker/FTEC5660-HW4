@@ -35,7 +35,7 @@ The basic parsing, metadata, question parsing, retrieval and abstention branches
 
 ## Verified full public evaluation — 20 November 2026
 
-GitHub Actions run: https://github.com/ALLE77-maker/FTEC5660-HW4/actions/runs/44711453228
+GitHub Actions run: https://github.com/ALLE77-maker/FTEC5660-HW4/actions/runs/44727273016
 
 The GitHub-hosted Python 3.11 job successfully installed dependencies and executed
 `python public_test_check.py` and `python ablation.py` against all 40 public
